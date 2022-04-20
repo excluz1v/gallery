@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Navigation() {
   return (
-    <Nav variant="pills" defaultActiveKey="1">
+    <Nav variant="pills" defaultActiveKey="1" className="justify-content-end">
       <Nav.Item>
         <Nav.Link as={Link} to="/" eventKey="1">
           Gallery
