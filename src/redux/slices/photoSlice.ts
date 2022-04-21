@@ -3,7 +3,10 @@ import { TCard, TPhotoState } from '../../types';
 
 // Define the initial state using that type
 const initialState: TPhotoState = {
-  photos: []
+  photos: [],
+  isLoading: false,
+  currentPage: 1,
+  error: ''
 };
 
 export const photosSlice = createSlice({
@@ -11,12 +14,20 @@ export const photosSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    fetchAll: (state, action: PayloadAction<TCard[]>) => {
+    fetchAllPhotos: (state) => {
+      state.isLoading = true;
+    },
+    fetchAllSuccess: (state, action: PayloadAction<TCard[]>) => {
       state.photos = action.payload;
+      state.isLoading = false;
+    },
+    fetchAllError: (state, action: PayloadAction<string>) => {
+      state.isLoading = false;
+      state.error = action.payload;
     }
   }
 });
 
-export const { fetchAll } = photosSlice.actions;
+export const { fetchAllPhotos, fetchAllSuccess, fetchAllError } = photosSlice.actions;
 
 export default photosSlice.reducer;

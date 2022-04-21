@@ -8,4 +8,7 @@ export type TCard = {
 
 export type TPhotoState = {
   photos: TCard[];
+  isLoading: boolean;
+  currentPage: number;
+  error: string;
 };
