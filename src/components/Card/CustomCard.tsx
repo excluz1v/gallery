@@ -3,9 +3,9 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import { Link } from 'react-router-dom';
-import { TCard } from '../../types';
+import { TPhoto } from '../../types';
 
-function CustomCard(props: TCard) {
+function CustomCard(props: TPhoto) {
   const { title, url } = props;
   return (
     <Card style={{ width: '18rem' }}>

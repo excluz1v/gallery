@@ -11,7 +11,7 @@ function Gallery() {
   const { photos } = useAppSelector((state) => state.photos);
   const dispatch = useAppDispatch();
   const { fetchAllPhotos } = photosSlice.actions;
-
+  console.log('first');
   useEffect(() => {
     dispatch(fetchAllPhotos());
   }, []);

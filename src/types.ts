@@ -1,4 +1,4 @@
-export type TCard = {
+export type TPhoto = {
   albumId: number;
   id: number;
   title: string;
@@ -7,7 +7,7 @@ export type TCard = {
 };
 
 export type TPhotoState = {
-  photos: TCard[];
+  photos: TPhoto[];
   isLoading: boolean;
   currentPage: number;
   error: string;

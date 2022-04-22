@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { TCard, TPhotoState } from '../../types';
+import { TPhoto, TPhotoState } from '../../types';
 
 // Define the initial state using that type
 const initialState: TPhotoState = {
@@ -17,7 +17,7 @@ export const photosSlice = createSlice({
     fetchAllPhotos: (state) => {
       state.isLoading = true;
     },
-    fetchAllSuccess: (state, action: PayloadAction<TCard[]>) => {
+    fetchAllSuccess: (state, action: PayloadAction<TPhoto[]>) => {
       state.photos = action.payload;
       state.isLoading = false;
     },
